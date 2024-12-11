@@ -227,7 +227,8 @@ void Engine::GamePlayScreen::Update()
 									for (Food* o : objects) o->SetDie();
 									bonusScoreText->SetText("bonus " + std::to_string(bonusScore));
 									bonusScoreText->SetXPosition(scoreBoardSprite->GetPosition().x + (scoreBoardSprite->GetScaleWidth() - bonusScoreText->GetWidth()) / 2);
-									scoreText->SetText(FormatScore(score + bonusScore));
+									score += bonusScore;
+									scoreText->SetText(FormatScore(score));
 									showBonusScore = true;
 									break;
 								} 
